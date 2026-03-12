@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Entropy | The Ultimate War</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Outfit:wght@300;600;900&display=swap" rel="stylesheet">
+    <style>
+        body, html { margin: 0; padding: 0; height: 100%; overflow-x: hidden; }
+        .bg-fixed-custom {
+            background-image: url('lo3ba.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -2;
+        }
+        .overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.65); /* توازن بين وضوح الصورة ووضوح النص */
+            z-index: -1;
+        }
+        .font-header { font-family: 'Syncopate', sans-serif; }
+        .font-body { font-family: 'Outfit', sans-serif; }
+        .btn-glow {
+            background: linear-gradient(90deg, #00f2ff, #bc13fe);
+            transition: 0.5s;
+            background-size: 200% auto;
+        }
+        .btn-glow:hover {
+            background-position: right center;
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(0, 242, 255, 0.6);
+        }
+    </style>
+</head>
+<body class="text-white font-body">
+
+    <div class="bg-fixed-custom"></div>
+    <div class="overlay"></div>
+
+    <main class="relative z-10">
+        
+        <section class="min-h-screen flex flex-col items-center justify-center px-6 text-center">
+            <div class="mb-6 inline-block bg-cyan-500/20 border border-cyan-400/30 px-4 py-1 rounded-full animate-pulse">
+                <span class="text-cyan-400 text-xs font-black uppercase tracking-widest">● 15,402 Commanders Online</span>
+            </div>
+            
+            <h1 class="font-header text-5xl md:text-8xl font-black mb-6 italic tracking-tighter uppercase leading-none">
+                RULE THE <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">STARS</span>
+            </h1>
+
+            <p class="text-gray-300 text-lg md:text-2xl max-w-3xl mx-auto mb-10 leading-relaxed font-light">
+                Experience the next generation of mobile combat. Stunning visuals, massive mechs, and <span class="text-white font-bold italic">total strategic freedom.</span>
+            </p>
+
+            <a href="https://to.wendiro.com/u?k=220e77cdef8b42929dd5c06ff71b4ae5&via=5773" 
+               class="btn-glow inline-block text-white font-black text-2xl md:text-4xl py-6 px-12 md:px-20 rounded-2xl uppercase italic shadow-2xl tracking-tighter">
+                DOWNLOAD FREE NOW
+            </a>
+            
+            <p class="mt-6 text-cyan-400 font-bold text-lg animate-bounce">🎁 Claim your $99 Starter Pack inside!</p>
+        </section>
+
+        <section class="py-20 px-6">
+            <div class="max-w-5xl mx-auto bg-white/5 backdrop-blur-md rounded-[3rem] p-10 border border-white/10 text-center">
+                <h2 class="font-header text-3xl md:text-5xl mb-8 italic">NOT A GAME. A MOVIE.</h2>
+                <p class="text-gray-400 text-xl mb-10 italic">"The most addictive experience of 2026. Cinematic visuals meet pure adrenaline."</p>
+                <div class="grid md:grid-cols-2 gap-6 text-left">
+                    <div class="bg-black/40 p-6 rounded-2xl border-l-4 border-cyan-500">
+                        <h4 class="font-bold text-white uppercase tracking-wider mb-2">Ultra-HD Graphics</h4>
+                        <p class="text-gray-400 text-sm">Console quality in your pocket. No lag, just power.</p>
+                    </div>
+                    <div class="bg-black/40 p-6 rounded-2xl border-l-4 border-purple-500">
+                        <h4 class="font-bold text-white uppercase tracking-wider mb-2">Epic Mech Wars</h4>
+                        <p class="text-gray-400 text-sm">Command thousands of units in real-time battles.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-32 text-center px-6">
+            <h2 class="font-header text-4xl md:text-6xl mb-12 italic">JOIN THE LEGION</h2>
+            <a href="https://to.wendiro.com/u?k=220e77cdef8b42929dd5c06ff71b4ae5&via=5773" 
+               class="btn-glow inline-block text-white font-black text-3xl py-8 px-16 rounded-3xl uppercase italic shadow-2xl">
+                PLAY FOR FREE
+            </a>
+            <p class="mt-8 text-gray-500 text-xs font-bold uppercase tracking-widest tracking-widest">Official Download • Secure • Verified</p>
+        </section>
+
+    </main>
+
+</body>
+</html>
