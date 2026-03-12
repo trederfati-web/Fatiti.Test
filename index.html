@@ -7,7 +7,9 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Outfit:wght@300;600;900&display=swap" rel="stylesheet">
     <style>
-        body, html { margin: 0; padding: 0; height: 100%; overflow-x: hidden; }
+        body, html { margin: 0; padding: 0; height: 100%; overflow-x: hidden; scroll-behavior: smooth; }
+        
+        /* الصورة الخلفية الثابتة */
         .bg-fixed-custom {
             background-image: url('lo3ba.jpg');
             background-size: cover;
@@ -18,23 +20,54 @@
             top: 0; left: 0; width: 100%; height: 100%;
             z-index: -2;
         }
+        
         .overlay {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.65); /* توازن بين وضوح الصورة ووضوح النص */
+            background: rgba(0, 0, 0, 0.75);
             z-index: -1;
         }
+        
         .font-header { font-family: 'Syncopate', sans-serif; }
         .font-body { font-family: 'Outfit', sans-serif; }
+        
         .btn-glow {
             background: linear-gradient(90deg, #00f2ff, #bc13fe);
             transition: 0.5s;
             background-size: 200% auto;
+            animation: pulse-glow 2s infinite;
         }
+
+        @keyframes pulse-glow {
+            0% { box-shadow: 0 0 10px rgba(0, 242, 255, 0.5); }
+            50% { box-shadow: 0 0 30px rgba(188, 19, 254, 0.8); }
+            100% { box-shadow: 0 0 10px rgba(0, 242, 255, 0.5); }
+        }
+
         .btn-glow:hover {
             background-position: right center;
             transform: scale(1.05);
-            box-shadow: 0 0 30px rgba(0, 242, 255, 0.6);
+        }
+
+        .glass-card { 
+            background: rgba(255, 255, 255, 0.05); 
+            backdrop-filter: blur(15px); 
+            border: 1px solid rgba(255, 255, 255, 0.1); 
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            border: 1px solid rgba(0, 242, 255, 0.3);
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
         }
     </style>
 </head>
@@ -46,50 +79,70 @@
     <main class="relative z-10">
         
         <section class="min-h-screen flex flex-col items-center justify-center px-6 text-center">
-            <div class="mb-6 inline-block bg-cyan-500/20 border border-cyan-400/30 px-4 py-1 rounded-full animate-pulse">
-                <span class="text-cyan-400 text-xs font-black uppercase tracking-widest">● 15,402 Commanders Online</span>
+            <div class="mb-6 bg-cyan-500/20 border border-cyan-400/30 px-6 py-2 rounded-full">
+                <span class="text-cyan-400 text-xs font-black uppercase tracking-widest animate-pulse italic">● Server Status: Online & Stable</span>
             </div>
             
-            <h1 class="font-header text-5xl md:text-8xl font-black mb-6 italic tracking-tighter uppercase leading-none">
+            <h1 class="font-header text-5xl md:text-9xl font-black mb-8 italic tracking-tighter uppercase leading-none">
                 RULE THE <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">STARS</span>
             </h1>
 
-            <p class="text-gray-300 text-lg md:text-2xl max-w-3xl mx-auto mb-10 leading-relaxed font-light">
-                Experience the next generation of mobile combat. Stunning visuals, massive mechs, and <span class="text-white font-bold italic">total strategic freedom.</span>
+            <p class="text-gray-300 text-lg md:text-2xl max-w-3xl mx-auto mb-12 font-light">
+                Experience the next generation of mobile combat. Stunning visuals, massive mechs, and total strategic freedom.
             </p>
 
             <a href="https://to.wendiro.com/u?k=220e77cdef8b42929dd5c06ff71b4ae5&via=5773" 
-               class="btn-glow inline-block text-white font-black text-2xl md:text-4xl py-6 px-12 md:px-20 rounded-2xl uppercase italic shadow-2xl tracking-tighter">
+               class="btn-glow inline-block text-white font-black text-2xl md:text-4xl py-6 px-16 rounded-2xl uppercase italic tracking-tighter shadow-2xl">
                 DOWNLOAD FREE NOW
             </a>
-            
-            <p class="mt-6 text-cyan-400 font-bold text-lg animate-bounce">🎁 Claim your $99 Starter Pack inside!</p>
+            <p class="mt-4 text-sm text-gray-500 italic">No credit card required • Verified Secure</p>
         </section>
 
         <section class="py-20 px-6">
-            <div class="max-w-5xl mx-auto bg-white/5 backdrop-blur-md rounded-[3rem] p-10 border border-white/10 text-center">
-                <h2 class="font-header text-3xl md:text-5xl mb-8 italic">NOT A GAME. A MOVIE.</h2>
-                <p class="text-gray-400 text-xl mb-10 italic">"The most addictive experience of 2026. Cinematic visuals meet pure adrenaline."</p>
-                <div class="grid md:grid-cols-2 gap-6 text-left">
-                    <div class="bg-black/40 p-6 rounded-2xl border-l-4 border-cyan-500">
-                        <h4 class="font-bold text-white uppercase tracking-wider mb-2">Ultra-HD Graphics</h4>
-                        <p class="text-gray-400 text-sm">Console quality in your pocket. No lag, just power.</p>
-                    </div>
-                    <div class="bg-black/40 p-6 rounded-2xl border-l-4 border-purple-500">
-                        <h4 class="font-bold text-white uppercase tracking-wider mb-2">Epic Mech Wars</h4>
-                        <p class="text-gray-400 text-sm">Command thousands of units in real-time battles.</p>
-                    </div>
+            <div class="max-w-4xl mx-auto">
+                <h2 class="font-header text-3xl md:text-5xl mb-10 text-center italic text-cyan-400 uppercase">Master the Strategy</h2>
+                <div class="video-wrapper">
+                    <iframe src="https://streamable.com/e/4bxub1?autoplay=1&muted=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
                 </div>
             </div>
         </section>
 
-        <section class="py-32 text-center px-6">
-            <h2 class="font-header text-4xl md:text-6xl mb-12 italic">JOIN THE LEGION</h2>
+        <section class="py-20 bg-black/60 backdrop-blur-md border-y border-white/10 text-center px-6">
+            <h2 class="font-header text-3xl md:text-6xl mb-6 italic tracking-tight">WHY WAIT?</h2>
+            <p class="text-gray-300 text-xl max-w-2xl mx-auto mb-10">
+                Join <span class="text-cyan-400 font-bold">15,000+</span> commanders who are already dominating the galaxy. Exclusive gear is waiting for you.
+            </p>
             <a href="https://to.wendiro.com/u?k=220e77cdef8b42929dd5c06ff71b4ae5&via=5773" 
-               class="btn-glow inline-block text-white font-black text-3xl py-8 px-16 rounded-3xl uppercase italic shadow-2xl">
-                PLAY FOR FREE
+               class="btn-glow inline-block text-white font-black text-xl md:text-3xl py-5 px-12 rounded-xl uppercase italic tracking-tighter">
+                CLAIM YOUR MECH — FREE
             </a>
-            <p class="mt-8 text-gray-500 text-xs font-bold uppercase tracking-widest tracking-widest">Official Download • Secure • Verified</p>
+        </section>
+
+        <section class="py-20 px-6">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="font-header text-3xl md:text-5xl mb-10 text-center italic text-purple-500 uppercase">Interstellar Combat</h2>
+                <div class="video-wrapper">
+                    <iframe src="https://streamable.com/e/8m3mpw?autoplay=1&muted=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-32 text-center px-6 relative overflow-hidden">
+            <div class="absolute inset-0 bg-cyan-600/10 blur-[150px]"></div>
+            <div class="relative z-10 max-w-4xl mx-auto">
+                <h2 class="font-header text-4xl md:text-7xl font-black mb-8 italic tracking-tighter uppercase">START YOUR JOURNEY</h2>
+                <p class="text-gray-300 text-xl mb-12 italic">Join the global elite. Secure your free download now.</p>
+                
+                <a href="https://to.wendiro.com/u?k=220e77cdef8b42929dd5c06ff71b4ae5&via=5773" 
+                   class="btn-glow inline-block text-white font-black text-3xl md:text-5xl py-8 px-20 rounded-3xl uppercase tracking-tighter italic">
+                    INSTALL NOW
+                </a>
+                
+                <div class="mt-16 flex justify-center gap-10 opacity-30 grayscale">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/1024px-Google_Play_Store_badge_EN.svg.png" class="h-10">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Download_on_the_App_Store_Badge.svg/1024px-Download_on_the_App_Store_Badge.svg.png" class="h-10">
+                </div>
+            </div>
         </section>
 
     </main>
